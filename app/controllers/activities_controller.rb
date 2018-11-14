@@ -10,21 +10,35 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @activity = Activity.find(params[:id])
   end
 
   # GET /activities/new
   def new
     @activity = Activity.new
+    @interests = Interest.all
+    @prices = Price.all
+    @events = Event.all
+
+    # [{:k => 1, :val => 1}, {:k => 2, :val => 2}]
   end
 
   # GET /activities/1/edit
   def edit
+    @activity = Activity.find(params[:id])
+    @interests = Interest.all
+    @prices = Price.all
   end
 
   # POST /activities
   # POST /activities.json
   def create
+    @interests = Interest.all
+    @prices = Price.all
+      # byebug
     @activity = Activity.new(activity_params)
+
+
 
     respond_to do |format|
       if @activity.save
@@ -40,6 +54,7 @@ class ActivitiesController < ApplicationController
   # PATCH/PUT /activities/1
   # PATCH/PUT /activities/1.json
   def update
+
     respond_to do |format|
       if @activity.update(activity_params)
         format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
@@ -69,6 +84,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:interest_id, :event_id, :food, :cover, :booze, :price)
+      params.require(:activity).permit(:interest_id, :event_id, :food, :cover, :booze, :price_id)
     end
 end

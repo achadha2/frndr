@@ -7,9 +7,11 @@
     <tr>
       <th>Fname</th>
       <th>Lname</th>
+      <th>Email</th>
       <th>Password</th>
       <th>Numevents</th>
       <th>Profile</th>
+      <th>Img url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +21,11 @@
       <tr>
         <td><%= user.fname %></td>
         <td><%= user.lname %></td>
+        <td><%= user.email %></td>
         <td><%= user.password %></td>
         <td><%= user.numevents %></td>
         <td><%= user.profile %></td>
+        <td><%= user.img_url %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,9 +3,11 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :fname
       t.string :lname
-      t.string :password
-      t.integer :numevents
+      t.string :email
+      t.string :password_digest
+      t.integer :numevents, default: 0
       t.string :profile
+      t.string :img_url
 
       t.timestamps
     end

@@ -12,33 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :interest_id %>
-    <%= form.text_field :interest_id %>
+    <%= form.label "Category" %>
+    <%= form.collection_select :interest_id, @interests, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :event_id %>
-    <%= form.text_field :event_id %>
+    <%= form.collection_select :event_id, @events, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :food %>
-    <%= form.text_field :food %>
+    <%= form.label 'Will food be available?' %>
+    <%= form.check_box:food %>
   </div>
 
   <div class="field">
-    <%= form.label :cover %>
-    <%= form.text_field :cover %>
+    <%= form.label 'Is there a cover?' %>
+    <%= form.check_box :cover %>
   </div>
 
   <div class="field">
-    <%= form.label :booze %>
-    <%= form.text_field :booze %>
+    <%= form.label 'Will alcohol be served (21+)?' %>
+    <%= form.check_box :booze %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.label 'Price Range?' %>
+    <%= form.collection_select :price_id, @prices, :id, :name %>
   </div>
 
   <div class="actions">

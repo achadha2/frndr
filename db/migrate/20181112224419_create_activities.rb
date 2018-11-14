@@ -6,7 +6,8 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.boolean :food
       t.boolean :cover
       t.boolean :booze
-      t.integer :price
+      t.integer :price_id
+      t.string :entertainment
 
       t.timestamps
     end

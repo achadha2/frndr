@@ -22,18 +22,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :numevents %>
-    <%= form.number_field :numevents %>
+    <%= form.label "Password" %>
+    <%= form.password_field :password_digest %>
   </div>
+
 
   <div class="field">
     <%= form.label :profile %>
     <%= form.text_field :profile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url %>
   </div>
 
   <div class="actions">
